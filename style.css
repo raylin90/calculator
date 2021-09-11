@@ -1,0 +1,71 @@
+/* CSS reset to keep our designs consistent from one browser to another */
+*, *::before, *::after {
+    /* box-sizing: border-box  allows us to include the padding and border in an element's total width and height */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #00AAFF, #00FF6C;
+}
+
+#calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px); 
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); 
+}
+
+#calculator-grid button {
+    /* when we move out cursor to the button, it will change shape */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    /* ourline is something outside of border */
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: 50%;
+    margin: 5px;
+}
+
+#calculator-grid button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+#calculator-grid .span-two {
+    grid-column: span 2;
+    border-radius: 50px;
+}
+
+.output {
+    border-radius: 10px;
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    /* 
+    word-break: break-all; It is used to break the words at any character to prevent overflow.
+    word-wrap: break-word; It is used to broken the words at arbitrary points (keep the word togerther) to prevent overflow.
+    */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-output {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-output {
+    color: rgba(255, 255, 255);
+    font-size: 2.5rem;
+}
