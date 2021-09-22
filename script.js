@@ -4,14 +4,14 @@ const operationButtons = document.querySelectorAll("[data-operation]")
 const equalsButton = document.querySelector("[data-equal]")
 const deleteButton = document.querySelector("[data-delete]")
 const allClearButton = document.querySelector("[data-all-clear]")
-const previousOperandTextElement = document.querySelector("[data-previous-operand]")
-const currentOperandTextElement = document.querySelector("[data-current-operand]")
+const previousOperandText = document.querySelector("[data-previous-operand]")
+const currentOperandText = document.querySelector("[data-current-operand]")
 
 // create a Calculator class, which takes in two params, and default is empty by using clear function;
 class Calculator {
-    constructor(previousOperandTextElement, currentOperandTextElement) {
-        this.previousOperandTextElement = previousOperandTextElement;
-        this.currentOperandTextElement = currentOperandTextElement;
+    constructor(previousOperandText, currentOperandText) {
+        this.previousOperandText = previousOperandText;
+        this.currentOperandText = currentOperandText;
         this.clear();
     }
 
@@ -131,19 +131,19 @@ class Calculator {
     // update HTML display to this.currentOperand, which come from appendNumber();
     updateDisplay() {
         // display the currentOperand on the HTML
-        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand); 
+        this.currentOperandText.innerText = this.getDisplayNumber(this.currentOperand); 
         // but if we have an operation clicked, we want to concat. the number with operation and display on the previous field
         if(this.operation) {
-            this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`; 
+            this.previousOperandText.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`; 
             // if an operation does not exist, like we pressed = sign, then we clear the previous record
         } else {
-            this.previousOperandTextElement.innerText = "";
+            this.previousOperandText.innerText = "";
         }
     }
 }
 
 // create a Calculator instance
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+const calculator = new Calculator(previousOperandText, currentOperandText);
 
 // numberButtoms is an array
 // console.log(numberButtons);
