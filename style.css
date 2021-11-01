@@ -29,7 +29,6 @@ body {
     /* ourline is something outside of border */
     outline: none;
     background-color: rgba(255, 255, 255, .75);
-    border-radius: 50%;
     margin: 5px;
 }
 
@@ -39,7 +38,6 @@ body {
 
 #calculator-grid .span-two {
     grid-column: span 2;
-    border-radius: 50px;
 }
 
 .output {
