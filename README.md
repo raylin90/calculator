@@ -1,4 +1,5 @@
-# built a basic calculator that performs _add subtract multiply divide_ function
+# Basic Calculator 
+allow users to perform simple _add subtract multiply divide_ function
 
 1. used HTML as the view page for all the buttons and display
 2. used CSS for styling: 
